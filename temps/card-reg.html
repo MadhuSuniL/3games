@@ -36,15 +36,14 @@ body {
             <input type="text" id="name" placeholder="Your Name" style="font-size: 40px;border: 10px inset black;border-radius: 30px"><br><br>
 <br><label style="font-size: 50px;">Select No Cards : </label> <select id="count" value="10" style="font-size: 60px;border: 10px inset black;border-radius: 30px">
                 <option value="10">10</option>
-                <option value="10">15</option>
-                <option value="10">20</option>
-                <option value="10">25</option>
-                <option value="10">30</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
             </select><br><br>
             <button class="btn btn-primary w-100" style="font-size: 50px;border-radius: 30px;">Done</button>
         </center>
         </div>
-
         <div class="form2" style="padding: 5%;">
             <center>
                 <h1 >Hello <span id="nameg" class="text-primary">Madhu</span>  <br>This is your id</h1>
@@ -73,8 +72,8 @@ console.log(document.getElementById('count').value)
                 success:function(res){
                     $('.form').hide(500)
                     $('.form2').show(500)
-                    $(".nameg").empty()
-                    $(".nameg").text(res.name)
+                    $(".text-primary").empty()
+                    $(".text-primary").text(res.name)
                     $(".idg").empty()
                     $(".idg").text(res.id)
                 }
