@@ -11,6 +11,12 @@ def home(req):
 
 
 def snack(req):
-    data = random_style
-    con = {"style":data}
+    data_list = random_style()
+    # print(data)
+    con = {"style":data_list[0],"snakes":data_list[1],'lifts':data_list[2],'dinos':data_list[3],"snakes_red":data_list[4],'lifts_red':data_list[5],'dinos_red':data_list[6],"set_lift":data_list[7],'set_snake':data_list[8],'set_dino':data_list[9]}
+    
+    # for i, v in con.items():
+    #     print(v)
+    #     print()
+        
     return render(req, "snack.html",context=con)
