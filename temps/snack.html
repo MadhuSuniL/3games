@@ -4,46 +4,71 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <style>
+
+        body{
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("{% static 'images/mbg.gif' %}");
+        }
         .col{
-            border: 7px outset yellowgreen;
-            width: 60px;
-            border-radius: 30px;
-            background-color: white;
-            height: 60px;
-            font-size: 30px;
-            text-align: center;
+            /* border: 1px outset gray; */
+            width: 100px;
+            border-radius: 20px;
+            background-color: transparent;
+            background-size: cover;
+            background-position-x: center;
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-image: none;
+            height: 120px;
+            font-size: 55px;
+            font-family: serif;
+            text-align:right;
+            color:azure;
             box-shadow: 2px 14px 6px 3px grey;
-            margin: 2%;
             margin-bottom: 0.9%
         }
 
+
         {{style}}
 
-    #c100{border: 17px inset aqua;height: 80px;border-radius: 50%}
+    #c100{background-image:url("{% static 'images/wind2.gif' %}");height: 120px;border-radius: 20px;font-size: 100px;font-family: cursive;}
 
         
         
         .row{
             width: 100%;
-            padding: 0%;margin: 0%
-/*            border: 3px outset red;*/
+            padding: 0%;margin: 0%;
+
         }
         
         .plate{
             width: 100%;
+            margin-top: 2%;
             padding-bottom: 10%;
             padding-left: 5%;
             padding-right: 5%;
-        }
+            background-size: cover;
+            }
         .ran,.di{
-            background-color: blue;
+            background-color:transparent;
             color: white;
-            box-shadow: 3px 14px 15px 16px grey;
-            width: 22%;
-            height: 140px;
-            font-size: 85px;
-            border-radius: 50%;
-            margin-top: -6%
+            /* box-shadow: 3px 14px 15px 16px grey; */
+            width: 37%;
+            position: fixed;
+            top: 84%;
+            left: 34%;
+            height: 350px;
+            /* font-size: 85px; */
+            border-radius: 50px;
+            margin-top: -6%;
+            background-size: cover;
+            background-position-x: center;
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-image: url("{% static 'images/start.gif' %}");
+        }
+        .di{
         }
         .button-29 {
   align-items: center;
@@ -105,18 +130,23 @@
 
       
     <audio id="black">
-        <source src="{% static 'images/black.mp3' %}" type="audio/mp3">
+        <source src="{% static 'images/s.mp3' %}" type="audio/mp3">
+      Your browser does not support the audio element.
+      </audio>
+      
+    <audio id="black2">
+        <source src="{% static 'images/b.mp3' %}" type="audio/mp3">
       Your browser does not support the audio element.
       </audio>
 
       
     <audio id="happy">
-        <source src="{% static 'images/Happy.mp3' %}" type="audio/mp3">
+        <source src="{% static 'images/l.mp3' %}" type="audio/mp3">
       Your browser does not support the audio element.
       </audio>
 
     <audio id="walk">
-        <source src="{% static 'images/walk.mp3' %}" type="audio/mp3">
+        <source src="{% static 'images/m.mp3' %}" type="audio/mp3">
       Your browser does not support the audio element.
       </audio>
 
@@ -138,10 +168,10 @@
         <div class='col' id=c8>8</div>
         <div class='col' id=c9>9</div>
         <div class='col' id=c10>10</div>
+    </div>
+    <div class="row">
         <div class='col' id=c11>11</div>
         <div class='col' id=c12>12</div>
-      </div>
-       <div class="row">
         <div class='col' id=c13>13</div>
         <div class='col' id=c14>14</div>
         <div class='col' id=c15>15</div>
@@ -150,30 +180,32 @@
         <div class='col' id=c18>18</div>
         <div class='col' id=c19>19</div>
         <div class='col' id=c20>20</div>
+    </div>
+    <div class="row">
         <div class='col' id=c21>21</div>
         <div class='col' id=c22>22</div>
         <div class='col' id=c23>23</div>
         <div class='col' id=c24>24</div>
-      </div>
-       <div class="row">
         <div class='col' id=c25>25</div>
         <div class='col' id=c26>26</div>
         <div class='col' id=c27>27</div>
         <div class='col' id=c28>28</div>
         <div class='col' id=c29>29</div>
         <div class='col' id=c30>30</div>
+    </div>
+    <div class="row">
         <div class='col' id=c31>31</div>
         <div class='col' id=c32>32</div>
         <div class='col' id=c33>33</div>
         <div class='col' id=c34>34</div>
         <div class='col' id=c35>35</div>
         <div class='col' id=c36>36</div>
-        </div>
-       <div class="row">
         <div class='col' id=c37>37</div>
         <div class='col' id=c38>38</div>
         <div class='col' id=c39>39</div>
         <div class='col' id=c40>40</div>
+    </div>
+    <div class="row">
         <div class='col' id=c41>41</div>
         <div class='col' id=c42>42</div>
         <div class='col' id=c43>43</div>
@@ -182,10 +214,10 @@
         <div class='col' id=c46>46</div>
         <div class='col' id=c47>47</div>
         <div class='col' id=c48>48</div>
-        </div>
-       <div class="row">
         <div class='col' id=c49>49</div>
         <div class='col' id=c50>50</div>
+    </div>
+    <div class="row">
         <div class='col' id=c51>51</div>
         <div class='col' id=c52>52</div>
         <div class='col' id=c53>53</div>
@@ -208,10 +240,10 @@
         <div class='col' id=c68>68</div>
         <div class='col' id=c69>69</div>
         <div class='col' id=c70>70</div>
+    </div>
+    <div class="row">
         <div class='col' id=c71>71</div>
         <div class='col' id=c72>72</div>
-        </div>
-       <div class="row">
         <div class='col' id=c73>73</div>
         <div class='col' id=c74>74</div>
         <div class='col' id=c75>75</div>
@@ -220,26 +252,26 @@
         <div class='col' id=c78>78</div>
         <div class='col' id=c79>79</div>
         <div class='col' id=c80>80</div>
+    </div>
+    <div class="row">
         <div class='col' id=c81>81</div>
         <div class='col' id=c82>82</div>
         <div class='col' id=c83>83</div>
         <div class='col' id=c84>84</div>
-        </div>
-       <div class="row">
         <div class='col' id=c85>85</div>
         <div class='col' id=c86>86</div>
         <div class='col' id=c87>87</div>
         <div class='col' id=c88>88</div>
         <div class='col' id=c89>89</div>
         <div class='col' id=c90>90</div>
+    </div>
+    <div class="row">
         <div class='col' id=c91>91</div>
         <div class='col' id=c92>92</div>
         <div class='col' id=c93>93</div>
         <div class='col' id=c94>94</div>
         <div class='col' id=c95>95</div>
         <div class='col' id=c96>96</div>
-        </div>
-       <div class="row">
         <div class='col' id=c97>97</div>
         <div class='col' id=c98>98</div>
         <div class='col' id=c99>99</div>
@@ -252,7 +284,6 @@
     <center>
     
     <div class="di">
-        ?
     </div>
     <div class="ran" style="text-align: center">
     </div>
@@ -270,26 +301,64 @@
 
 //audios
 
+
+                            
+
 var die = document.getElementById('die')
 var black = document.getElementById('black')
+var black2 = document.getElementById('black2')
 var happy = document.getElementById('happy')
 var walk = document.getElementById('walk')
 var dice = document.getElementById('dice')
-
+// alert($("#c2").text())
         $(".ran").hide()
         $(".msg").hide()
         $(".right").hide()
         
         setInterval(function(){
-            var c = Math.floor(Math.random() * 6);
-            $(".ran").text(c)
+            var ran_num = Math.floor(Math.random() * 6);
+            if (ran_num == 0){
+                $(".ran").css('background-image','url(/static/images/0.gif)')
+            }
+            else if (ran_num == 1){
+                $(".ran").css('background-image','url(/static/images/1.gif)')
+            }
+            else if (ran_num == 2){
+                $(".ran").css('background-image','url(/static/images/2.gif)')
+            }
+            else if (ran_num == 3){
+                $(".ran").css('background-image','url(/static/images/3.gif)')
+            }
+            else if (ran_num == 4){
+                $(".ran").css('background-image','url(/static/images/4.gif)')
+            }
+            else if (ran_num == 5){
+                $(".ran").css('background-image','url(/static/images/5.gif)')
+            }
         },10)
         
         function blue(){
             $(".left").hide(200)
             $(".ran").hide()
             var ran_num = Math.floor(Math.random() * 6);
-            $('.di').text(ran_num)
+            if (ran_num == 0){
+                $(".di").css('background-image','url(/static/images/0.gif)')
+            }
+            else if (ran_num == 1){
+                $(".di").css('background-image','url(/static/images/1.gif)')
+            }
+            else if (ran_num == 2){
+                $(".di").css('background-image','url(/static/images/2.gif)')
+            }
+            else if (ran_num == 3){
+                $(".di").css('background-image','url(/static/images/3.gif)')
+            }
+            else if (ran_num == 4){
+                $(".di").css('background-image','url(/static/images/4.gif)')
+            }
+            else if (ran_num == 5){
+                $(".di").css('background-image','url(/static/images/5.gif)')
+            }
             $('.di').show()
             var cell = get_pos_by_id(window.currnet_blue_pos)
             
@@ -307,9 +376,26 @@ var dice = document.getElementById('dice')
         function red(){
             $(".right").hide(200)
             var ran_num = Math.floor(Math.random() * 6);
-            
+            if (ran_num == 0){
+                $(".di").css('background-image','url(/static/images/0.gif)')
+            }
+            else if (ran_num == 1){
+                $(".di").css('background-image','url(/static/images/1.gif)')
+            }
+            else if (ran_num == 2){
+                $(".di").css('background-image','url(/static/images/2.gif)')
+            }
+            else if (ran_num == 3){
+                $(".di").css('background-image','url(/static/images/3.gif)')
+            }
+            else if (ran_num == 4){
+                $(".di").css('background-image','url(/static/images/4.gif)')
+            }
+            else if (ran_num == 5){
+                $(".di").css('background-image','url(/static/images/5.gif)')
+            }
             $(".ran").hide()
-            $('.di').text(ran_num)
+            // $('.di').text(ran_num)
             $('.di').show()
 
             var cell = get_pos_by_id(window.currnet_red_pos)
@@ -363,15 +449,15 @@ var dice = document.getElementById('dice')
         }
         
         
-        $("#c1").css('background-color','blue')
+        $("#c1").css('background-image',"url({% static 'images/blue.gif' %})")
         var currnet_blue_pos = "#c1"
         var currnet_red_pos = "#c1"
-        setInterval(function(){
-            if (currnet_blue_pos == currnet_red_pos)
-                {
-                    $(currnet_blue_pos).css('background-color','darkmagenta')
-                }
-        })
+        // setInterval(function(){
+        //     if (currnet_blue_pos == currnet_red_pos)
+        //         {
+        //             $(currnet_blue_pos).css('background-color','darkmagenta')
+        //         }
+        // })
         
         function add_id(cell,num){
         var actual_cell = cell.replace("#c","")
@@ -397,56 +483,94 @@ var dice = document.getElementById('dice')
             else{
                 ref= -1
             }
-            var b_m = setInterval(blue_mover,100)
+            var b_m = setInterval(blue_mover,450)
             function blue_mover (){
             var pos = window.currnet_blue_pos 
 
             var target_pos = add_id(pos,ref)
-            $(pos).css('background-color','white')
-            $(window.currnet_red_pos).css('background-color','red')
-            $(target_pos).css('background-color','blue')
-            // walk.play()
+            
+            $(pos).css('background-image','none')
+            
+            $(window.currnet_red_pos).css('background-image',"url({% static 'images/red.gif' %})")
+
+            {{set_dino|safe}}
+            {{set_snake|safe}}
+            {{set_lift|safe}}
+
+            
+            $(target_pos).css('background-image',"url({% static 'images/blue.gif' %})")
+            
+            walk.play()
             window.currnet_blue_pos = target_pos    
                 now++
             if (num < now ){
+                
+                // console.log(window.currnet_blue_pos)
+                
                 if(window.currnet_blue_pos == window.currnet_red_pos){
-                    if ($(window.currnet_blue_pos).css("border-color") == "rgb(255, 0, 0)"){
                         die.play()
                         var cell = get_pos_by_id(window.currnet_red_pos)
                         var target_cell = int_num(cell)
                         var target_pos = set_id_by_num(target_cell)
                         window.currnet_red_pos = target_pos
+                    $(".di").css('background-image','url(/static/images/dead.gif)')
                         setTimeout(function(){
-                        $(window.currnet_red_pos).css('background-color','red')                            
-                        },500)
-
-                    }
+                        $(window.currnet_red_pos).css('background-image',"url({% static 'images/red.gif' %})")                            
+                        },1000)
                 }
-                else if($(window.currnet_blue_pos).css("border-color") == "rgb(0, 0, 0)"){
+                else if({{snakes|safe}}){
                     black.play()
-                    var current_cell = get_pos_by_id(window.currnet_blue_pos)
-                    var target_cell = Math.floor((Math.random() * current_cell) +1)
-                    var target_pos = set_id_by_num(target_cell)
+                    var target_pos = '#c100'
+                    while ($(target_pos).css("background-image") != 'none'){
+                        var current_cell = get_pos_by_id(window.currnet_blue_pos)
+                        var target_cell = Math.floor((Math.random() * current_cell) +1)
+                        if(target_cell == current_cell){
+                            target_cell = target_cell - 1
+                        }
+                        target_pos = set_id_by_num(target_cell)
+                    }
+                     
+    
                     var res = String(target_cell-current_cell)
-                    $('.di').text(res)
+                    $(".di").css('background-image','url(/static/images/sn.gif)')
+                    $(window.currnet_blue_pos).css("background-image",'none')
                     setTimeout(function(){
-                    $(window.currnet_blue_pos).css("background-color",'white')
                     window.currnet_blue_pos = target_pos
-                    $(window.currnet_blue_pos).css('background-color','blue')                            
-                    },500)
+                    $(window.currnet_blue_pos).css('background-image',"url({% static 'images/blue.gif' %})")                            
+                    },1000)
                 }
-                else if($(window.currnet_blue_pos).css("border-color") == "rgb(255, 215, 0)"){
-                    happy.play()
+                else if({{dinos|safe}}){
+                    black2.play()
                     var current_cell = get_pos_by_id(window.currnet_blue_pos)
-                    var target_cell = randome_number(current_cell)
+                    var target_cell = 1
                     var target_pos = set_id_by_num(target_cell)
                     var res = String(target_cell-current_cell)
-                    $('.di').text("+"+res)                    
+                    $(".di").css('background-image','url(/static/images/d.gif)')
+                    $(window.currnet_blue_pos).css("background-image",'none')
                     setTimeout(function(){
-                    $(window.currnet_blue_pos).css("background-color",'white')
                     window.currnet_blue_pos = target_pos
-                    $(window.currnet_blue_pos).css('background-color','blue')                            
-                    },500)
+                    $(window.currnet_blue_pos).css('background-image',"url({% static 'images/blue.gif' %})")                            
+                    },1000)
+                }
+                else if({{lifts|safe}}){
+                    happy.play()
+                    var target_pos = '#c100'
+                    while ($(target_pos).css("background-image") != 'none'){
+                        var current_cell = get_pos_by_id(window.currnet_blue_pos)
+                        var target_cell = randome_number(current_cell)
+                        if (target_cell == current_cell){
+                            target_cell = target_cell + 1
+                        }
+                        target_pos = set_id_by_num(target_cell)
+                    }
+                    
+                    var res = String(target_cell-current_cell)
+                    $(".di").css('background-image','url(/static/images/lift.gif)')                    
+                    $(window.currnet_blue_pos).css("background-image",'none')
+                    setTimeout(function(){
+                    window.currnet_blue_pos = target_pos
+                    $(window.currnet_blue_pos).css('background-image',"url({% static 'images/blue.gif' %})")                            
+                    },1000)
                 }
             clearInterval(b_m);
             if (currnet_red_pos != "#c100"){
@@ -455,6 +579,7 @@ var dice = document.getElementById('dice')
             }
             }
         }
+
         //red move
         function move_red(num){
             var now = 1
@@ -470,21 +595,24 @@ var dice = document.getElementById('dice')
                 ref= -1
             }
 
-            var r_m = setInterval(red_mover,100)
+            var r_m = setInterval(red_mover,450)
             function red_mover (){
             var pos = window.currnet_red_pos 
 
             var target_pos = add_id(pos,ref)
-            $(pos).css('background-color','white')
-            $(window.currnet_blue_pos).css('background-color','blue')
-            $(target_pos).css('background-color','red')
-            // walk.play()
+            $(pos).css('background-image','none')
+            $(window.currnet_blue_pos).css('background-image',"url({% static 'images/blue.gif' %})")
+            {{set_dino|safe}}
+            {{set_snake|safe}}
+            {{set_lift|safe}}
+
+            $(target_pos).css('background-image',"url({% static 'images/red.gif' %})")
+            walk.play()
             window.currnet_red_pos = target_pos    
             
             now = now + 1
                 if (num < now ){
                     if(window.currnet_blue_pos == window.currnet_red_pos){
-                    if ($(window.currnet_blue_pos).css("border-color") == "rgb(255, 0, 0)"){
                         die.play()
                         var cell = get_pos_by_id(window.currnet_blue_pos)
                         console.log(cell)
@@ -493,37 +621,63 @@ var dice = document.getElementById('dice')
                         var target_pos = set_id_by_num(target_cell)
                         console.log(target_pos)
                         window.currnet_blue_pos = target_pos
-                        console.log(target_pos)
+                    $(".di").css('background-image','url(/static/images/dead.gif)')
                         setTimeout(function(){
-                        $(window.currnet_blue_pos).css('background-color','blue')
-                        },500)
-                    }
+                        $(window.currnet_blue_pos).css('background-image',"url({% static 'images/blue.gif' %})")
+                        },1000)
                 }
-                else if($(window.currnet_red_pos).css("border-color") == "rgb(0, 0, 0)"){
+                else if({{snakes_red|safe}}){
                     black.play()
-                    var current_cell = get_pos_by_id(window.currnet_red_pos)
-                    var target_cell = Math.floor((Math.random() * current_cell) +1)
-                    var target_pos = set_id_by_num(target_cell)
+                    var target_pos = '#c100'
+                    while ($(target_pos).css("background-image") != 'none'){
+                        var current_cell = get_pos_by_id(window.currnet_red_pos)
+                        var target_cell = Math.floor((Math.random() * current_cell) +1)
+                        if(target_cell == current_cell){
+                            target_cell = target_cell - 1
+                        }
+                        var target_pos = set_id_by_num(target_cell)
+                    }
+                    
+                    
                     var res = String(target_cell-current_cell)
-                    $('.di').text(res)
+                    $(".di").css('background-image','url(/static/images/sn.gif)')
+                    $(window.currnet_red_pos).css("background-image",'none')
                     setTimeout(function(){
-                    $(window.currnet_red_pos).css("background-color",'white')
                     window.currnet_red_pos = target_pos
-                    $(window.currnet_red_pos).css('background-color','red')                            
-                    },500)
+                    $(window.currnet_red_pos).css('background-image',"url({% static 'images/red.gif' %})")  
+                    },1000)
                 }
-                else if($(window.currnet_red_pos).css("border-color") == "rgb(255, 215, 0)"){
-                    happy.play()
+                else if({{dinos_red|safe}}){
+                    black2.play()
                     var current_cell = get_pos_by_id(window.currnet_red_pos)
-                    var target_cell = randome_number(current_cell)
+                    var target_cell = 1
                     var target_pos = set_id_by_num(target_cell)
                     var res = String(target_cell-current_cell)
-                    $('.di').text("+"+res)                    
+                    $(".di").css('background-image','url(/static/images/d.gif)')
+                    $(window.currnet_red_pos).css("background-image",'none')
                     setTimeout(function(){
-                    $(window.currnet_red_pos).css("background-color",'white')
                     window.currnet_red_pos = target_pos
-                    $(window.currnet_red_pos).css('background-color','red')                            
-                    },500)
+                    $(window.currnet_red_pos).css('background-image',"url({% static 'images/red.gif' %})")                            
+                    },1000)
+                }
+                else if({{lifts_red|safe}}){
+                    happy.play()
+                    var target_pos = '#c100'
+                    while ($(target_pos).css("background-image") != 'none'){
+                        var current_cell = get_pos_by_id(window.currnet_red_pos)
+                        var target_cell = randome_number(current_cell)
+                        if (target_cell == current_cell){
+                            target_cell = target_cell + 1
+                        }
+                        var target_pos = set_id_by_num(target_cell)            
+                    }
+                    var res = String(target_cell-current_cell)
+                    $(".di").css('background-image','url(/static/images/lift.gif)')
+                    $(window.currnet_red_pos).css("background-image",'none')
+                    setTimeout(function(){
+                    window.currnet_red_pos = target_pos
+                    $(window.currnet_red_pos).css('background-image',"url({% static 'images/red.gif' %})")                            
+                    },1000)
                 }
             clearInterval(r_m);
             if (currnet_red_pos != "#c100"){
@@ -532,45 +686,48 @@ var dice = document.getElementById('dice')
             }
             }
         }
-         
+
+
+
+
+
 //        wining 
         
         setInterval(function(){
-            if($("#c100").css("background-color") == "rgb(0, 0, 255)")
+            if($("#c100").css("background-image") == "url('/static/image/blue.gif')")
             {
                 $('.plate').hide(500)
                 $('.left').hide()
                 $('.right').hide()
                 $('.di').hide()
                 $('.ran').hide()
-                $('.msg').html("Blue win...!<br><br><center><a class='btn btn-success' href='/' style='width:80%'>home</a></center>")
+                $('.msg').html("Green win...!<br><br><center><a class='btn btn-success' href='/' style='width:80%'>home</a></center>")
                 $('.msg').css("color",'blue')
                 $('.msg').show(500)
             }
-            else if($("#c100").css("background-color") == "rgb(255, 0, 0)")
+            else if($("#c100").css("background-image") == "url('/static/image/red.gif')")
             {
                 $('.plate').hide(500)
                 $('.left').hide()
                 $('.right').hide()
                 $('.di').hide()
                 $('.ran').hide()
-                $('.msg').html("Red win...!<br><br><center><a class='btn btn-success' href='/' style='width:80%'>home</a></center>")
+                $('.msg').html("Pink win...!<br><br><center><a class='btn btn-success' href='/' style='width:80%'>home</a></center>")
                 $('.msg').css("color",'red')
                 $('.msg').show(500)                
 
             }
         
-        })
+        },1000)
            
         function randome_number(num){
-            var r_num = Math.floor(Math.random()*100)+num
+            var r_num = Math.floor(Math.random()*80)+num
             
-            while(r_num>100){
-                r_num = Math.floor(Math.random()*100)+num
+            while(r_num>80){
+                r_num = Math.floor(Math.random()*80)+num
             }
             return r_num
         }
-           
         var red_run = false
         var blue_run = false
         
@@ -578,9 +735,22 @@ var dice = document.getElementById('dice')
             
         }
         
-        //20 -- gold
-        //30 -- black
-        //20 -- red
+        //setting old poses
+
+            setInterval(function(){
+                {{set_dino|safe}}
+                {{set_snake|safe}}
+                {{set_lift|safe}}
+
+            },500)
+
+            setInterval(function(){
+                $(window.currnet_blue_pos).css('background-image',"url({% static 'images/blue.gif' %})")
+                $(window.currnet_red_pos).css('background-image',"url({% static 'images/red.gif' %})")
+            },200)
+
+
+
      </script>
       </body>
     
