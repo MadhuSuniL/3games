@@ -18,14 +18,16 @@ body {
   align-items: center;
   flex-wrap: wrap;
   min-height: 100vh;
-  background: azure;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("{% static 'images/mainbg.gif' %}");
 }
 
 body .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
   max-width: 1200px;
   margin: 40px 0;
 }
@@ -145,51 +147,66 @@ body .container .card .box .content a:hover {
     </style>  
   </head>
   <body>
+    <img src="{% static 'images/logo2.png' %}" style="margin-top: 5%;" width="70%">
    
     <div class="container">
-  <div class="card">
+  <div class="card s">
     <div class="box" style="background-image: url({% static 'images/f.jpg' %});background-repeat: no-repeat;background-size: cover">
       <div class="content">
 <!--        <h2>01</h2>-->
-        <h3>?</h3>
-<!--        <p>This game can play only two players in future we will add more players option.</p>-->
-        <a href="/snack">Play</a>
+        <h3>Lifts - Snakes</h3>
+       <br><p class="text-center text-capitalize">This game needs only two players and one phone to play this game.</p>
+        <!-- <a href="/snack">Play</a> -->
       </div>
     </div>
   </div>
 
-  <div class="card">
+  <div class="card c">
     <div class="box" style="background-image: url({% static 'images/c.jpg' %});background-repeat: no-repeat;background-size: cover">
       <div class="content">
 <!--        <h2>02</h2>-->
         <h3>Cards</h3>
-        <a href="/cards/">Play</a>
+       <br><p class="text-center text-capitalize">This game needs only two players and two phones to play this game</p>
+        <!-- <a href="/cards/">Play</a> -->
       </div>
     </div>
   </div>
-  <div class="card">
+  <div class="card a">
     <div class="box" style="background-image: url({% static 'images/any4.jpg' %});background-repeat: no-repeat;background-size: cover">
       <div class="content">
 <!--        <h2>03</h2>-->
-        <h3>Any4</h3>
+       <br><p class="text-center text-capitalize">This game needs only two players and one phone to play this game</p>
+       <h3>Any4</h3>
 <!--        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>-->
-        <a href="/any4/">Play</a>
+        <!-- <a href="/any4/">Play</a> -->
       </div>
     </div>
   </div>
-  <div class="card">
+  <div class="card set">
     <div class="box" style="background-image: url({% static 'images/s.jpg' %});background-repeat: no-repeat;background-size: cover">
       <div class="content">
 <!--        <h2>03</h2>-->
         <h3>Help</h3>
 <!--        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>-->
-        <a href="#" class="help">open</a>
+        <!-- <a href="#" class="help">open</a> -->
       </div>
     </div>
   </div>
 </div>     
 
     <script>
+
+      $(".s").click(function(){
+        window.location.href = '/snack'
+      })
+
+      $(".c").click(function(){
+        window.location.href = '/cards'
+      })
+
+      $(".a").click(function(){
+        window.location.href = '/any4'
+      })
         
      </script>
       </body>
