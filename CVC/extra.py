@@ -126,3 +126,74 @@ def random_style():
 
 
 # random_style()
+
+def hide_ids(l):
+    hide_id = []
+    for id in range(1,37):
+        if id not in l:
+            hide_id.append(id)
+
+
+def horizental(data,num):
+    
+    if data[str(num)] == data[str(num+1)] and  data[str(num)] == data[str(num+2)] and data[str(num)] == data[str(num+3)] and  data[str(num)] != 'none':
+        win = ''
+        
+        if 'bluefill.gif' in data[str(num)]:
+            win = 'blue'    
+            pos = [num,num+1,num+2,num+3]
+            # hides = hide_ids(pos)
+            
+            res = [True,win,pos]
+            return res
+        elif 'redfill.gif' in data[str(num)]:
+            win = 'red'
+            pos = [num,num+1,num+2,num+3]
+            res = [True,win,pos]
+            return res
+    else:
+        return [False,'none']
+         
+
+def vertical(data,num):
+    
+    if data[str(num)] == data[str(num+6)] and  data[str(num)] == data[str(num+12)] and data[str(num)] == data[str(num+18)] and  data[str(num)] != 'none':
+        win = ''
+        if 'bluefill.gif' in data[str(num)]:
+            win = 'blue'    
+            pos = [num,num+6,num+12,num+18]
+            res = [True,win,pos]
+            return res
+        elif 'redfill.gif' in data[str(num)]:
+            win = 'red'
+            pos = [num,num+6,num+12,num+18]
+            res = [True,win,pos]
+            return res
+        
+    else:
+        return [False,'none']
+        
+         
+
+
+
+
+def check_any4(data):
+    required_horizental_postions = [1,2,3,7,8,9,13,14,15,19,20,21,25,26,27,31,32,33]
+    required_vertical_postions = [1,7,13,2,8,14,3,9,15,4,10,16,5,11,17,16,12,18]
+    
+    for pos in required_horizental_postions:
+        res = horizental(data, pos)
+        if res[0] == True:
+            return res
+    for pos in required_vertical_postions:
+        res = vertical(data, pos)
+        if res[0] == True:
+            return res
+    return [False,'none']
+
+        
+
+
+
+    
