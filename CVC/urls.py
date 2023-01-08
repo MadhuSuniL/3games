@@ -7,6 +7,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('snack/', snack),
+    path('any4/', any4),
+    path('any4/get_positions', get_positions),
     path('cards/',include('mobile.urls')),
 ]
 if settings.DEBUG:
