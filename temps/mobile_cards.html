@@ -1,0 +1,311 @@
+<html>
+{% load static %}
+<head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <style>
+        .flip-card {
+  background-color: transparent;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  width: 98%;
+  height: 78%;
+            margin: 1%;
+  border-radius: 50px;
+  perspective: 1000px;  
+}
+        
+.flip-card-inner {
+  position: relative;
+                border-radius: 50px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+        .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+        
+        .flip-card-front, .flip-card-back {
+    border-radius: 50px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+        .flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+/*
+        
+        .flip-card-inner :hover .flip-front{
+  transform: rotateY(100deg);
+}
+*/
+.blink {
+            animation: blinker 0.5s linear infinite;
+            color: red;
+            font-family:inherit
+        }
+        
+        
+        @keyframes blinker {
+            20% {
+                color:lightskyblue;
+/*                margin-top: 1%*/
+            }
+			40% {
+                color:pink;
+/*                margin-top: 2%*/
+            }
+			60% {
+                color:white;
+                margin-top: 3%
+            }
+			80% {
+                color:pink;
+/*                margin-top: 2%*/
+            }
+			100% {
+                color:white;
+/*                margin-top: 4%*/
+            }
+          }
+            .p1{
+                color: aqua;
+                font-size: 70px
+            }
+
+/* toast */
+#snackbar-green {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: deepskyblue;
+  color: white;
+  text-align: center;
+  border-radius: 50px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 41%;
+  bottom: 30px;
+  font-size: 57px;
+  border:2px inset grey;
+  box-shadow: 3px 13px 3px 4px grey;
+}
+/* toast */
+#snackbar-red {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 50px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 35%;
+  bottom: 30px;
+  font-size: 57px;
+  border:2px inset grey;
+  box-shadow: 3px 13px 3px 4px grey;
+}
+
+#snackbar-green.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbar-red.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+
+    </style>
+    </head>
+<body>
+
+  <audio id="flop">
+    <source src="{% static 'images/Flop.mp3' %}" type="audio/mp3">
+  Your browser does not support the audio element.
+  </audio>
+
+  
+<audio id="black">
+    <source src="{% static 'images/black.mp3' %}" type="audio/mp3">
+  Your browser does not support the audio element.
+  </audio>
+
+  
+<audio id="happy">
+    <source src="{% static 'images/give.mp3' %}" type="audio/mp3">
+  Your browser does not support the audio element.
+  </audio>
+  
+
+
+
+
+   <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="{% static 'images/bg.gif' %}" alt="Card" style="width:100%;height:100%;border-radius: 50px">
+       <center>
+        <h1 style="position: fixed;top: 47%;left: 39.9%;font-size: 90px;color: aliceblue" class="blink" >Flip</h1>
+    </center>
+    </div>
+    <div class="flip-card-back" style="background-color: aliceblue">
+           <img src="{{img}}" alt="Card" style="width:50%;height:48%;border-radius: 50px;margin: 2%;box-shadow: 4px 34px 33px 4px grey">
+      <h1 style="color: dimgrey;font-size:100px;float: center;">{{name}}</h1>
+      <h1 style="color: darkorange;font-size:60px;margin-left: 8%;float: left;box-shadow: 4px 34px 33px 4px grey;border-radius: 20px;padding: 1%"><img src="{% static 'images/ram.png' %}" style='margin-top: -10%;' width="70px" height="70px"> {{ram}}GB</h1>
+      <h1 style="color:gold;font-size:60px;margin-right: 8%;box-shadow: 4px 34px 33px 4px grey;float: right;border-radius: 20px;padding: 1%"><img src="{% static 'images/rom.png' %}" style='margin-top: -6%' width="70px" height="70px"> {{rom}}GB</h1><br><br><br><br><br><br>
+      <h1 style="color: black;font-size:60px;margin-left: 8%;float: left;box-shadow: 4px 34px 33px 4px grey;border-radius: 20px;padding: 1%"><img src="{% static 'images/camera.png' %}" style='margin-top: -6%' width="70px" height="70px"> {{camera}}MP</h1>
+      <h1 style="color:deepskyblue;font-size:60px;margin-right: 8%;box-shadow: 4px 34px 33px 4px grey;border-radius: 20px;float: right;padding: 1%"><img src="{% static 'images/cpu.png' %}" style='margin-top: -3%' width="70px" height="70px">Snapdragon {{processor}}</h1><br><br><br><br><br><br><br>
+      <center>
+      <h1 style="color: green;font-size:80px;width: 60%; box-shadow: 4px 34px 33px 4px grey;border-radius: 20px;padding: 1%"><img src="{% static 'images/status.png' %}" width="100px" height="100px"> {{battary}}mah</h1>
+    </center>
+    </div>
+  </div>
+</div>
+   <br>
+   <center>
+   <div class="dd">
+       <h1 class="p1" style="color: red;font-size: 70px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{frd_name}} Cards : {{frd_cards}}</h1>
+       <h1 class="p2" style="color: blue;font-size: 70px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Your Cards : <span id="base">{{user_cards}}</span></h1>
+       <br>
+       <button class="btn btn-danger give" style="font-size: 50px;border-radius: 40px;border: 15px outset grey;box-shadow: 10px 13px 13px 10px black;">Give card</button>
+       <button class="btn btn-success next" style="font-size: 50px;border-radius: 40px;margin-left: 15%;border: 15px outset grey;box-shadow: 10px 13px 13px 10px black">Next card</button>
+   </div>
+<div id="snackbar-green">Card Increased...!</div>
+<div id="snackbar-red">1 Card Loooooooose..!</div>
+
+  </center>
+
+
+
+    <script>
+//audio
+var flop = document.getElementById('flop')
+var black = document.getElementById('black')
+
+
+
+
+// var t = "f"
+
+      $(".flip-card").hover(function(){
+        $('.blink').attr("class",'g')
+        flop.play()
+        
+        // window.t = "y"
+      })
+      // $(document).click(function(){
+      //   if (window.t == 'y'){
+      //     flop.play()
+      //     window.t = 'f'
+      //   }
+        
+      // })
+
+      $(".next").click(function(){
+        setTimeout(function(){
+          window.location.reload()
+        },500)
+      })
+
+      //giving card 
+
+      $('.give').click(function(){
+        black.play()
+            $.ajax({
+                url:'/cards/give_card/',
+                success:function(res){
+                  $('.next').show(500)
+                  $('.give').hide(500)
+                  var x = document.getElementById("snackbar-red");
+                  x.className = "show";
+                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                }
+            })
+        })
+
+        setInterval(function(){
+            $.ajax({
+                url:'/cards/score/',
+                success:function(res){
+                  if(res.user_cards == 0){
+                    // window.location.pathname='/'
+                  }
+                  $(".p1").empty()
+                  var text = res.frd_name+" Cards : "+String(res.frd_cards)
+                  $(".p1").text(text)
+                  var text2 = "Your Cards : "+String(res.user_cards)
+                  $(".p2").empty()
+                  $(".p2").text(text2)
+                }
+            })
+
+        },500)
+
+        
+
+        setInterval(function(){
+          $.ajax({
+                url:'/cards/on_next/',
+                success:function(res){
+                  if (res.val == 'y'){
+                    var x = document.getElementById("snackbar-green");
+                    x.className = "show";
+                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                    $('.next').show(500)
+                  }
+                }
+            })
+        },700)
+
+$('.next').hide()
+
+     </script>
+      </body>
+    
+    
+    </html>

@@ -1,0 +1,591 @@
+<html>
+{% load static %}
+<head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("{% static 'images/mbg2.gif' %}");
+        }
+        
+        .col{
+            width: 100px;
+            height: 150px;
+            background-color: black;
+            border: 15px outset grey;
+            box-shadow: 15px 5px 15px 5px rgba(255, 255,255,.7);
+            border-radius: 50%;
+            margin: 1%;
+            color: aliceblue;
+            font-family: cursive;
+            font-size: 70px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: none;
+
+        }
+
+        .btn{
+            width: 80%;
+            height: 150px;
+            background-color: black;
+            border: 15px outset grey;
+            box-shadow: 15px 5px 15px 5px rgba(255, 255,255,.7);
+            border-radius: 50%;
+            margin: 5%;
+            color: aliceblue;
+            font-family: cursive;
+            font-size: 70px;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: none;
+
+        }
+        .btn:hover{
+            box-shadow: 15px 5px 15px 5px rgba(0, 255,0,1);
+        }
+
+        .b1,.b2,.b3,.b4,.b5,.b6{
+            border: none;
+            background-color: transparent;
+            box-shadow: none;
+            margin-bottom: -1%;
+            margin-left: 2.4%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url("{% static 'images/btnblue.gif' %}")
+        }
+        
+        
+        
+        .plate{
+            width: 90%;
+            margin-top: 40%;    
+        }
+
+        .loader {
+  border: 16px solid transparent;
+  border-radius: 50%;
+  border-right: 16px solid whitesmoke;
+  width: 50%;
+  height: 28%;
+  margin-left: 25%;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin .4s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.load{
+    width: 100%;
+  margin-top: 20%;
+
+    height: 100%;
+}
+
+.lbar{
+    font-size: 80px;
+    text-align: center;
+    background-color: white;
+}
+    </style>  
+  </head>
+  <body>   
+
+
+    <audio id="win">
+        <source src="{% static 'images/win.mp3' %}" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+
+      
+    <audio id="pop">
+        <source src="{% static 'images/pop.mp3' %}" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+
+    <audio autoplay loop id="bg">
+        <source src="{% static 'images/bgany4.mp3' %}" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+
+
+<div class="load">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="loader"></div>
+    <center><br><br><br>
+    <progress class="lbar" id="lbar" value="0" max="10">
+    </progress>
+</center>
+<br>
+    <h1 style="font-size: 70px;color: whitesmoke;text-align: center;">Please wait..</h1>
+</div>
+<center>
+    <div class="plate">
+        <div class='row'>
+            <button class='col b1'></button>
+            <button class='col b2'></button>
+            <button class='col b3'></button>
+            <button class='col b4'></button>
+            <button class='col b5'></button>
+            <button class='col b6'></button>
+            </div>
+        <div class='row'>
+            <div id='c1' class='col' >1</div>
+            <div id='c2' class='col' >2</div>
+            <div id='c3' class='col' >3</div>
+            <div id='c4' class='col' >4</div>
+            <div id='c5' class='col' >5</div>
+            <div id='c6' class='col' >6</div>
+            </div>
+            <div class='row'>
+            <div id='c7' class='col' >7</div>
+            <div id='c8' class='col' >8</div>
+            <div id='c9' class='col' >9</div>
+            <div id='c10' class='col' >10</div>
+            <div id='c11' class='col' >11</div>
+            <div id='c12' class='col' >12</div>
+            </div>
+            <div class='row'>
+            <div id='c13' class='col' >13</div>
+            <div id='c14' class='col' >14</div>
+            <div id='c15' class='col' >15</div>
+            <div id='c16' class='col' >16</div>
+            <div id='c17' class='col' >17</div>
+            <div id='c18' class='col' >18</div>
+            </div>
+            <div class='row'>
+            <div id='c19' class='col' >19</div>
+            <div id='c20' class='col' >20</div>
+            <div id='c21' class='col' >21</div>
+            <div id='c22' class='col' >22</div>
+            <div id='c23' class='col' >23</div>
+            <div id='c24' class='col' >24</div>
+            </div>
+            <div class='row'>
+            <div id='c25' class='col' >25</div>
+            <div id='c26' class='col' >26</div>
+            <div id='c27' class='col' >27</div>
+            <div id='c28' class='col' >28</div>
+            <div id='c29' class='col' >29</div>
+            <div id='c30' class='col' >30</div>
+            </div>
+            <div class='row'>
+            <div id='c31' class='col' >31</div>
+            <div id='c32' class='col' >32</div>
+            <div id='c33' class='col' >33</div>
+            <div id='c34' class='col' >34</div>
+            <div id='c35' class='col' >35</div>
+            <div id='c36' class='col' >36</div>
+            </div>  
+    </div>
+<br>
+<br>
+    <button class="button-29 btn">Restart</button>
+</center>
+    <script>
+        var set = setInterval(
+            function(){
+                var val = document.getElementById('lbar').value
+                if (val == 10){
+                    clearInterval(set)
+                }
+                val = String(val+1)
+                $('#lbar').val(val)
+            },980
+        )
+        setTimeout(function(){
+            $('.load').hide(100)
+        },10000)
+
+        //audio
+        var bg = document.getElementById('bg') 
+        var win = document.getElementById('win') 
+        var pop = document.getElementById('pop') 
+
+        var current_image = "url({% static 'images/bluefill.gif' %})"
+        var current_border = "15px 5px 15px 5px dodgerblue"
+        // $('#c1').css('background-image', current_image)
+        // $('#c31').css('background-image', current_image)
+        function set_id_by_num(num){
+            id = "#c"+String(num)
+            return id
+        }
+        function get_pos_by_id(id){
+            id = id.replace('#c','')
+            return Number(id)
+        }
+
+        $(".b1").click(function(){
+            fill2(1)
+            // fill(31)
+
+        })
+        $(".b2").click(function(){
+            fill2(2)
+            // fill(32)
+
+        })
+        $(".b3").click(function(){
+            fill2(3)
+            // fill(33)
+
+        })
+        $(".b4").click(function(){
+            fill2(4)
+            // fill(34)
+
+        })
+        $(".b5").click(function(){
+            fill2(5)
+            // fill(35)
+
+        })
+        $(".b6").click(function(){
+            fill2(6)
+            // fill(36)
+
+        })
+$('.btn').hide()
+
+        function fill2(cell){
+            var target_id = set_id_by_num(cell) //31
+            if($(target_id).css('background-image') == 'none'){
+                var fillintravel = setInterval(function(){
+            var target_id = set_id_by_num(cell) //31
+            if($(target_id).css('background-image') == 'none'){
+                var now_cell = get_pos_by_id(target_id)-6
+                var old_id = set_id_by_num(now_cell)
+                $(old_id).css('background-image', 'none')
+                $(old_id).css('box-shadow' , '15px 5px 15px 5px rgba(255, 255,255,.7)')
+                $(target_id).css('background-image', current_image)
+                $(target_id).css('box-shadow',current_border)
+                
+                cell = cell+6
+            }
+            else{
+                clearInterval(fillintravel)
+        
+                if (current_border == '15px 5px 15px 5px dodgerblue'){
+                    current_border = '15px 5px 15px 5px red'
+                }
+                else if(current_border == '15px 5px 15px 5px red') {
+                    current_border = '15px 5px 15px 5px dodgerblue'
+                }
+                send()
+
+                $(set_id_by_num(cell-6)).animate({height: '200px', opacity: '1',fontSize: '76px'}, "fast");
+                $(set_id_by_num(cell-6)).animate({height: '150px', opacity: '1'}, "fast");
+                setTimeout(function(){
+                    pop.play()
+                },100)
+                
+                if (window.current_image == "url({% static 'images/bluefill.gif' %})"){
+                    window.current_image = "url({% static 'images/redfill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnred.gif' %})")
+                }
+                else if (window.current_image == "url({% static 'images/redfill.gif' %})"){
+                    window.current_image = "url({% static 'images/bluefill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                }
+
+
+            }
+                },30)
+            
+            
+            }
+            
+        }
+
+        function fill(cell){
+            pop.play()
+            var target_id = set_id_by_num(cell) //31
+            
+            if($(target_id).css('background-image') == 'none'){
+                $(target_id).css('background-image', current_image)
+
+                if (window.current_image == "url({% static 'images/bluefill.gif' %})"){
+                    window.current_image = "url({% static 'images/redfill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnred.gif' %})")
+                }
+                else if (window.current_image == "url({% static 'images/redfill.gif' %})"){
+                    window.current_image = "url({% static 'images/bluefill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                }
+                return 1
+            }
+            cell = cell - 6
+            target_id = set_id_by_num(cell) //25
+            if($(target_id).css('background-image') == 'none'){
+                $(target_id).css('background-image', current_image)
+                
+                if (window.current_image == "url({% static 'images/bluefill.gif' %})"){
+                    window.current_image = "url({% static 'images/redfill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnred.gif' %})")
+                }
+                else if (window.current_image == "url({% static 'images/redfill.gif' %})"){
+                    window.current_image = "url({% static 'images/bluefill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                }
+                return 1
+            }
+            cell = cell - 6
+            target_id = set_id_by_num(cell) //19
+            if($(target_id).css('background-image') == 'none'){
+                $(target_id).css('background-image', current_image)
+                
+                if (window.current_image == "url({% static 'images/bluefill.gif' %})"){
+                    window.current_image = "url({% static 'images/redfill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnred.gif' %})")
+                }
+                else if (window.current_image == "url({% static 'images/redfill.gif' %})"){
+                    window.current_image = "url({% static 'images/bluefill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                }
+                return 1
+            }
+            cell = cell - 6
+            target_id = set_id_by_num(cell) //13
+            if($(target_id).css('background-image') == 'none'){
+                $(target_id).css('background-image', current_image)
+                
+                if (window.current_image == "url({% static 'images/bluefill.gif' %})"){
+                    window.current_image = "url({% static 'images/redfill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnred.gif' %})")
+                }
+                else if (window.current_image == "url({% static 'images/redfill.gif' %})"){
+                    window.current_image = "url({% static 'images/bluefill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                }
+                return 1
+            }
+            cell = cell - 6
+            target_id = set_id_by_num(cell)//7
+            if($(target_id).css('background-image') == 'none'){
+                $(target_id).css('background-image', current_image)
+                
+                if (window.current_image == "url({% static 'images/bluefill.gif' %})"){
+                    window.current_image = "url({% static 'images/redfill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnred.gif' %})")
+                }
+                else if (window.current_image == "url({% static 'images/redfill.gif' %})"){
+                    window.current_image = "url({% static 'images/bluefill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                }
+                return 1
+            }
+            cell = cell - 6
+            target_id = set_id_by_num(cell)//1
+            if($(target_id).css('background-image') == 'none'){
+                $(target_id).css('background-image', current_image)
+                
+                if (window.current_image == "url({% static 'images/bluefill.gif' %})"){
+                    window.current_image = "url({% static 'images/redfill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnred.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnred.gif' %})")
+                }
+                else if (window.current_image == "url({% static 'images/redfill.gif' %})"){
+                    window.current_image = "url({% static 'images/bluefill.gif' %})"
+                    $('.b1').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b2').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b3').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b4').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b5').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                    $('.b6').css('background-image', "url({% static 'images/btnblue.gif' %})")
+                }
+                return 1
+            }
+
+            console.log('nooo space..!')
+        }
+
+        //sending positions to backend
+        
+        function send(){
+            $.ajax({
+                url:'/any4/get_positions',
+                data:{
+
+                    1:$('#c1').css('background-image'),
+                    2:$('#c2').css('background-image'),
+                    3:$('#c3').css('background-image'),
+                    4:$('#c4').css('background-image'),
+                    5:$('#c5').css('background-image'),
+                    6:$('#c6').css('background-image'),
+                    7:$('#c7').css('background-image'),
+                    8:$('#c8').css('background-image'),
+                    9:$('#c9').css('background-image'),
+                    10:$('#c10').css('background-image'),
+                    11:$('#c11').css('background-image'),
+                    12:$('#c12').css('background-image'),
+                    13:$('#c13').css('background-image'),
+                    14:$('#c14').css('background-image'),
+                    15:$('#c15').css('background-image'),
+                    16:$('#c16').css('background-image'),
+                    17:$('#c17').css('background-image'),
+                    18:$('#c18').css('background-image'),
+                    19:$('#c19').css('background-image'),
+                    20:$('#c20').css('background-image'),
+                    21:$('#c21').css('background-image'),
+                    22:$('#c22').css('background-image'),
+                    23:$('#c23').css('background-image'),
+                    24:$('#c24').css('background-image'),
+                    25:$('#c25').css('background-image'),
+                    26:$('#c26').css('background-image'),
+                    27:$('#c27').css('background-image'),
+                    28:$('#c28').css('background-image'),
+                    29:$('#c29').css('background-image'),
+                    30:$('#c30').css('background-image'),
+                    31:$('#c31').css('background-image'),
+                    32:$('#c32').css('background-image'),
+                    33:$('#c33').css('background-image'),
+                    34:$('#c34').css('background-image'),
+                    35:$('#c35').css('background-image'),
+                    36:$('#c36').css('background-image')
+                },
+                success:function(res){
+                    if (res.res[0] == true){
+                        if(res.res){
+                            var id = set_id_by_num(res.res[2][0])
+                            id = $(id)
+                            id.css('box-shadow','15px 5px 15px 5px #3fff00 ')
+
+         
+                            var id = set_id_by_num(res.res[2][1])
+                            id = $(id)
+                            id.css('box-shadow','15px 5px 15px 5px #3fff00 ')
+
+                            var id = set_id_by_num(res.res[2][2])
+                            id = $(id)
+                            id.css('box-shadow','15px 5px 15px 5px #3fff00 ')
+         
+                            var id = set_id_by_num(res.res[2][3])
+                            id = $(id)
+                            id.css('box-shadow','15px 5px 15px 5px #3fff00 ')
+                            $('.b1').hide(500)
+                            $('.b2').hide(500)
+                            $('.b3').hide(500)
+                            $('.b4').hide(500)
+                            $('.b5').hide(500)
+                            $('.b6').hide(500)
+                            $('.btn').show(500)
+
+                        }
+                    }
+                }
+            })
+        }
+
+
+
+        $('.btn').click(
+            function(){
+                window.location.reload()
+            })
+
+
+     </script>
+      </body>
+    
+    
+    </html>
